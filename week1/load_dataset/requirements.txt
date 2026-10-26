@@ -1,0 +1,7 @@
+pandas==3.0.6
+numpy
+fsspec
+huggingface_hub
+pylance
+pyarrow
+transformers
