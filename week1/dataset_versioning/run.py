@@ -165,7 +165,7 @@ if len(sys.argv) >= 2:
                             "embedding": model.encode("Test Add Text 4")},
         ], schema=schema)
         ds.merge_insert("text_movie").when_not_matched_insert_all().execute(tbl)
-                
+   
         print(ds.count_rows(), "rows in the dataset")
         print(ds.version, " versions available")
     elif sys.argv[1] == '--text-search':
