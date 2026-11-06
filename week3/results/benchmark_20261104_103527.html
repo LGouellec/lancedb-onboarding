@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>benchmark_20261104_103527.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="fineweb_edu-benchmark--2026-11-04-1035">fineweb_edu benchmark — 2026-11-04 10:35</h1>
+<ul>
+<li>Rows: <strong>4,484,304</strong> (table version 98)</li>
+<li>Vector column: <code>text_embedding</code> (cosine), k=10, returned columns: <code>id</code></li>
+<li>Queries: 200 rows sampled from the table (seed 42); recall measured on 50 of them vs brute force</li>
+<li>Filter: <code>int_score &gt; 1</code> (prefilter) · concurrency levels [1, 8, 32], 10s each</li>
+</ul>
+<h2 id="indices">Indices</h2>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>columns</th>
+<th style="text-align:right">indexed</th>
+<th style="text-align:right">unindexed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text_embedding_idx</td>
+<td>IvfPq</td>
+<td>text_embedding</td>
+<td style="text-align:right">4484304</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>text_idx</td>
+<td>FTS</td>
+<td>text</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">4484304</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vector-search--nprobes--refine_factor-sweep">Vector search — nprobes × refine_factor sweep</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">nprobes</th>
+<th style="text-align:right">refine</th>
+<th style="text-align:right">recall@10</th>
+<th style="text-align:right">p50 ms</th>
+<th style="text-align:right">p95 ms</th>
+<th style="text-align:right">p99 ms</th>
+<th style="text-align:right">QPS c=1</th>
+<th style="text-align:right">p99 c=1</th>
+<th style="text-align:right">QPS c=8</th>
+<th style="text-align:right">p99 c=8</th>
+<th style="text-align:right">QPS c=32</th>
+<th style="text-align:right">p99 c=32</th>
+<th style="text-align:right">errors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">58.5</td>
+<td style="text-align:right">111.5</td>
+<td style="text-align:right">160.8</td>
+<td style="text-align:right">19.0</td>
+<td style="text-align:right">61.8</td>
+<td style="text-align:right">153.7</td>
+<td style="text-align:right">72.9</td>
+<td style="text-align:right">255.7</td>
+<td style="text-align:right">236.2</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.780</td>
+<td style="text-align:right">63.2</td>
+<td style="text-align:right">3012.9</td>
+<td style="text-align:right">5360.0</td>
+<td style="text-align:right">16.5</td>
+<td style="text-align:right">75.0</td>
+<td style="text-align:right">131.8</td>
+<td style="text-align:right">90.3</td>
+<td style="text-align:right">465.7</td>
+<td style="text-align:right">117.3</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.850</td>
+<td style="text-align:right">61.1</td>
+<td style="text-align:right">69.8</td>
+<td style="text-align:right">90.2</td>
+<td style="text-align:right">16.0</td>
+<td style="text-align:right">75.3</td>
+<td style="text-align:right">114.9</td>
+<td style="text-align:right">94.6</td>
+<td style="text-align:right">314.7</td>
+<td style="text-align:right">173.1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.906</td>
+<td style="text-align:right">66.7</td>
+<td style="text-align:right">75.5</td>
+<td style="text-align:right">93.9</td>
+<td style="text-align:right">14.8</td>
+<td style="text-align:right">82.3</td>
+<td style="text-align:right">90.3</td>
+<td style="text-align:right">122.5</td>
+<td style="text-align:right">184.7</td>
+<td style="text-align:right">249.5</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.944</td>
+<td style="text-align:right">74.2</td>
+<td style="text-align:right">86.4</td>
+<td style="text-align:right">92.2</td>
+<td style="text-align:right">13.3</td>
+<td style="text-align:right">91.0</td>
+<td style="text-align:right">64.4</td>
+<td style="text-align:right">221.8</td>
+<td style="text-align:right">100.9</td>
+<td style="text-align:right">438.6</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">56.7</td>
+<td style="text-align:right">64.3</td>
+<td style="text-align:right">72.5</td>
+<td style="text-align:right">17.5</td>
+<td style="text-align:right">74.4</td>
+<td style="text-align:right">134.6</td>
+<td style="text-align:right">99.2</td>
+<td style="text-align:right">474.8</td>
+<td style="text-align:right">101.0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.784</td>
+<td style="text-align:right">63.5</td>
+<td style="text-align:right">70.2</td>
+<td style="text-align:right">75.6</td>
+<td style="text-align:right">15.7</td>
+<td style="text-align:right">79.5</td>
+<td style="text-align:right">116.4</td>
+<td style="text-align:right">87.6</td>
+<td style="text-align:right">390.8</td>
+<td style="text-align:right">121.9</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.854</td>
+<td style="text-align:right">66.4</td>
+<td style="text-align:right">75.6</td>
+<td style="text-align:right">85.7</td>
+<td style="text-align:right">14.9</td>
+<td style="text-align:right">87.5</td>
+<td style="text-align:right">107.3</td>
+<td style="text-align:right">94.5</td>
+<td style="text-align:right">330.7</td>
+<td style="text-align:right">148.1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.912</td>
+<td style="text-align:right">71.1</td>
+<td style="text-align:right">81.2</td>
+<td style="text-align:right">86.5</td>
+<td style="text-align:right">14.0</td>
+<td style="text-align:right">86.7</td>
+<td style="text-align:right">85.4</td>
+<td style="text-align:right">122.3</td>
+<td style="text-align:right">182.7</td>
+<td style="text-align:right">271.7</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.952</td>
+<td style="text-align:right">80.3</td>
+<td style="text-align:right">94.5</td>
+<td style="text-align:right">159.0</td>
+<td style="text-align:right">12.4</td>
+<td style="text-align:right">98.8</td>
+<td style="text-align:right">63.4</td>
+<td style="text-align:right">176.8</td>
+<td style="text-align:right">98.3</td>
+<td style="text-align:right">496.7</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">64.0</td>
+<td style="text-align:right">71.7</td>
+<td style="text-align:right">78.8</td>
+<td style="text-align:right">15.5</td>
+<td style="text-align:right">79.6</td>
+<td style="text-align:right">108.5</td>
+<td style="text-align:right">107.7</td>
+<td style="text-align:right">278.3</td>
+<td style="text-align:right">253.1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.784</td>
+<td style="text-align:right">72.0</td>
+<td style="text-align:right">79.6</td>
+<td style="text-align:right">92.4</td>
+<td style="text-align:right">13.4</td>
+<td style="text-align:right">105.3</td>
+<td style="text-align:right">99.9</td>
+<td style="text-align:right">115.3</td>
+<td style="text-align:right">259.4</td>
+<td style="text-align:right">193.2</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.856</td>
+<td style="text-align:right">74.9</td>
+<td style="text-align:right">80.6</td>
+<td style="text-align:right">84.3</td>
+<td style="text-align:right">13.3</td>
+<td style="text-align:right">91.4</td>
+<td style="text-align:right">93.6</td>
+<td style="text-align:right">109.8</td>
+<td style="text-align:right">235.8</td>
+<td style="text-align:right">207.8</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.914</td>
+<td style="text-align:right">79.1</td>
+<td style="text-align:right">90.0</td>
+<td style="text-align:right">99.1</td>
+<td style="text-align:right">12.5</td>
+<td style="text-align:right">94.5</td>
+<td style="text-align:right">78.7</td>
+<td style="text-align:right">132.5</td>
+<td style="text-align:right">180.9</td>
+<td style="text-align:right">290.2</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.954</td>
+<td style="text-align:right">87.4</td>
+<td style="text-align:right">101.6</td>
+<td style="text-align:right">123.9</td>
+<td style="text-align:right">11.3</td>
+<td style="text-align:right">106.4</td>
+<td style="text-align:right">59.4</td>
+<td style="text-align:right">189.3</td>
+<td style="text-align:right">100.1</td>
+<td style="text-align:right">521.8</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">80.5</td>
+<td style="text-align:right">84.8</td>
+<td style="text-align:right">88.2</td>
+<td style="text-align:right">12.2</td>
+<td style="text-align:right">98.0</td>
+<td style="text-align:right">81.6</td>
+<td style="text-align:right">113.9</td>
+<td style="text-align:right">152.2</td>
+<td style="text-align:right">462.8</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.784</td>
+<td style="text-align:right">87.5</td>
+<td style="text-align:right">97.2</td>
+<td style="text-align:right">105.3</td>
+<td style="text-align:right">11.2</td>
+<td style="text-align:right">104.5</td>
+<td style="text-align:right">75.5</td>
+<td style="text-align:right">192.2</td>
+<td style="text-align:right">147.0</td>
+<td style="text-align:right">347.0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.856</td>
+<td style="text-align:right">91.4</td>
+<td style="text-align:right">100.1</td>
+<td style="text-align:right">103.2</td>
+<td style="text-align:right">10.9</td>
+<td style="text-align:right">103.6</td>
+<td style="text-align:right">68.7</td>
+<td style="text-align:right">523.4</td>
+<td style="text-align:right">140.4</td>
+<td style="text-align:right">384.0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.914</td>
+<td style="text-align:right">95.4</td>
+<td style="text-align:right">104.0</td>
+<td style="text-align:right">111.3</td>
+<td style="text-align:right">9.8</td>
+<td style="text-align:right">153.7</td>
+<td style="text-align:right">65.0</td>
+<td style="text-align:right">161.0</td>
+<td style="text-align:right">126.1</td>
+<td style="text-align:right">412.1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.954</td>
+<td style="text-align:right">105.1</td>
+<td style="text-align:right">119.0</td>
+<td style="text-align:right">135.7</td>
+<td style="text-align:right">9.4</td>
+<td style="text-align:right">152.0</td>
+<td style="text-align:right">52.4</td>
+<td style="text-align:right">199.5</td>
+<td style="text-align:right">93.2</td>
+<td style="text-align:right">669.3</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">64</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">99.4</td>
+<td style="text-align:right">104.0</td>
+<td style="text-align:right">111.8</td>
+<td style="text-align:right">10.0</td>
+<td style="text-align:right">111.6</td>
+<td style="text-align:right">63.0</td>
+<td style="text-align:right">167.3</td>
+<td style="text-align:right">98.1</td>
+<td style="text-align:right">557.9</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">64</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.784</td>
+<td style="text-align:right">107.3</td>
+<td style="text-align:right">112.8</td>
+<td style="text-align:right">130.4</td>
+<td style="text-align:right">9.2</td>
+<td style="text-align:right">131.9</td>
+<td style="text-align:right">59.0</td>
+<td style="text-align:right">179.6</td>
+<td style="text-align:right">95.0</td>
+<td style="text-align:right">534.6</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">64</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.856</td>
+<td style="text-align:right">110.3</td>
+<td style="text-align:right">119.3</td>
+<td style="text-align:right">123.3</td>
+<td style="text-align:right">8.9</td>
+<td style="text-align:right">130.7</td>
+<td style="text-align:right">58.0</td>
+<td style="text-align:right">177.5</td>
+<td style="text-align:right">93.0</td>
+<td style="text-align:right">584.8</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">64</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.914</td>
+<td style="text-align:right">115.0</td>
+<td style="text-align:right">124.3</td>
+<td style="text-align:right">136.6</td>
+<td style="text-align:right">8.6</td>
+<td style="text-align:right">127.8</td>
+<td style="text-align:right">54.1</td>
+<td style="text-align:right">185.5</td>
+<td style="text-align:right">87.3</td>
+<td style="text-align:right">572.1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">64</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.954</td>
+<td style="text-align:right">124.3</td>
+<td style="text-align:right">135.8</td>
+<td style="text-align:right">140.9</td>
+<td style="text-align:right">8.0</td>
+<td style="text-align:right">142.3</td>
+<td style="text-align:right">46.5</td>
+<td style="text-align:right">252.0</td>
+<td style="text-align:right">72.4</td>
+<td style="text-align:right">1065.4</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">128</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">99.9</td>
+<td style="text-align:right">106.7</td>
+<td style="text-align:right">117.8</td>
+<td style="text-align:right">9.9</td>
+<td style="text-align:right">116.1</td>
+<td style="text-align:right">62.8</td>
+<td style="text-align:right">165.3</td>
+<td style="text-align:right">99.1</td>
+<td style="text-align:right">518.6</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">128</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.784</td>
+<td style="text-align:right">106.6</td>
+<td style="text-align:right">114.7</td>
+<td style="text-align:right">120.1</td>
+<td style="text-align:right">9.3</td>
+<td style="text-align:right">126.8</td>
+<td style="text-align:right">59.8</td>
+<td style="text-align:right">174.9</td>
+<td style="text-align:right">94.8</td>
+<td style="text-align:right">532.2</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">128</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.856</td>
+<td style="text-align:right">110.4</td>
+<td style="text-align:right">119.5</td>
+<td style="text-align:right">133.6</td>
+<td style="text-align:right">8.9</td>
+<td style="text-align:right">139.3</td>
+<td style="text-align:right">58.4</td>
+<td style="text-align:right">167.2</td>
+<td style="text-align:right">93.2</td>
+<td style="text-align:right">533.8</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">128</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.914</td>
+<td style="text-align:right">115.7</td>
+<td style="text-align:right">124.9</td>
+<td style="text-align:right">142.5</td>
+<td style="text-align:right">8.6</td>
+<td style="text-align:right">129.9</td>
+<td style="text-align:right">53.2</td>
+<td style="text-align:right">188.8</td>
+<td style="text-align:right">85.4</td>
+<td style="text-align:right">599.6</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">128</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.954</td>
+<td style="text-align:right">124.1</td>
+<td style="text-align:right">135.9</td>
+<td style="text-align:right">146.5</td>
+<td style="text-align:right">7.8</td>
+<td style="text-align:right">171.1</td>
+<td style="text-align:right">44.1</td>
+<td style="text-align:right">236.6</td>
+<td style="text-align:right">78.0</td>
+<td style="text-align:right">621.7</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<p>Fastest config with recall@10 ≥ 0.95: <strong>nprobes=10, refine=40</strong> (p50 80.3 ms, recall 0.952)</p>
+<h2 id="vector-search--filter-int_score--1--nprobes--refine_factor-sweep">Vector search + filter <code>int_score &gt; 1</code> — nprobes × refine_factor sweep</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">nprobes</th>
+<th style="text-align:right">refine</th>
+<th style="text-align:right">recall@10</th>
+<th style="text-align:right">p50 ms</th>
+<th style="text-align:right">p95 ms</th>
+<th style="text-align:right">p99 ms</th>
+<th style="text-align:right">QPS c=1</th>
+<th style="text-align:right">p99 c=1</th>
+<th style="text-align:right">QPS c=8</th>
+<th style="text-align:right">p99 c=8</th>
+<th style="text-align:right">QPS c=32</th>
+<th style="text-align:right">p99 c=32</th>
+<th style="text-align:right">errors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">285.0</td>
+<td style="text-align:right">315.1</td>
+<td style="text-align:right">330.1</td>
+<td style="text-align:right">3.4</td>
+<td style="text-align:right">393.2</td>
+<td style="text-align:right">26.0</td>
+<td style="text-align:right">407.4</td>
+<td style="text-align:right">64.3</td>
+<td style="text-align:right">1343.9</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.780</td>
+<td style="text-align:right">271.1</td>
+<td style="text-align:right">301.7</td>
+<td style="text-align:right">318.6</td>
+<td style="text-align:right">3.6</td>
+<td style="text-align:right">351.5</td>
+<td style="text-align:right">27.9</td>
+<td style="text-align:right">338.1</td>
+<td style="text-align:right">69.5</td>
+<td style="text-align:right">1226.5</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.850</td>
+<td style="text-align:right">266.6</td>
+<td style="text-align:right">331.7</td>
+<td style="text-align:right">354.8</td>
+<td style="text-align:right">3.5</td>
+<td style="text-align:right">355.0</td>
+<td style="text-align:right">27.0</td>
+<td style="text-align:right">368.5</td>
+<td style="text-align:right">69.2</td>
+<td style="text-align:right">1240.6</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.906</td>
+<td style="text-align:right">273.6</td>
+<td style="text-align:right">348.5</td>
+<td style="text-align:right">385.4</td>
+<td style="text-align:right">3.4</td>
+<td style="text-align:right">451.2</td>
+<td style="text-align:right">26.4</td>
+<td style="text-align:right">406.8</td>
+<td style="text-align:right">67.9</td>
+<td style="text-align:right">1162.7</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.944</td>
+<td style="text-align:right">287.2</td>
+<td style="text-align:right">369.0</td>
+<td style="text-align:right">431.4</td>
+<td style="text-align:right">3.3</td>
+<td style="text-align:right">409.1</td>
+<td style="text-align:right">25.2</td>
+<td style="text-align:right">396.3</td>
+<td style="text-align:right">69.0</td>
+<td style="text-align:right">901.6</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">293.4</td>
+<td style="text-align:right">330.6</td>
+<td style="text-align:right">369.7</td>
+<td style="text-align:right">3.3</td>
+<td style="text-align:right">358.5</td>
+<td style="text-align:right">25.4</td>
+<td style="text-align:right">377.0</td>
+<td style="text-align:right">63.8</td>
+<td style="text-align:right">1294.7</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.784</td>
+<td style="text-align:right">277.1</td>
+<td style="text-align:right">318.5</td>
+<td style="text-align:right">354.6</td>
+<td style="text-align:right">3.5</td>
+<td style="text-align:right">345.1</td>
+<td style="text-align:right">26.3</td>
+<td style="text-align:right">410.4</td>
+<td style="text-align:right">69.0</td>
+<td style="text-align:right">1022.7</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.854</td>
+<td style="text-align:right">279.7</td>
+<td style="text-align:right">308.9</td>
+<td style="text-align:right">344.3</td>
+<td style="text-align:right">3.5</td>
+<td style="text-align:right">321.2</td>
+<td style="text-align:right">25.9</td>
+<td style="text-align:right">366.8</td>
+<td style="text-align:right">68.3</td>
+<td style="text-align:right">1242.1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.912</td>
+<td style="text-align:right">289.4</td>
+<td style="text-align:right">351.6</td>
+<td style="text-align:right">383.1</td>
+<td style="text-align:right">3.3</td>
+<td style="text-align:right">362.4</td>
+<td style="text-align:right">25.8</td>
+<td style="text-align:right">382.8</td>
+<td style="text-align:right">68.6</td>
+<td style="text-align:right">1097.3</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.952</td>
+<td style="text-align:right">297.9</td>
+<td style="text-align:right">382.9</td>
+<td style="text-align:right">410.4</td>
+<td style="text-align:right">3.3</td>
+<td style="text-align:right">373.9</td>
+<td style="text-align:right">24.3</td>
+<td style="text-align:right">417.4</td>
+<td style="text-align:right">69.0</td>
+<td style="text-align:right">890.1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">319.1</td>
+<td style="text-align:right">407.5</td>
+<td style="text-align:right">415.5</td>
+<td style="text-align:right">3.1</td>
+<td style="text-align:right">357.7</td>
+<td style="text-align:right">23.0</td>
+<td style="text-align:right">469.2</td>
+<td style="text-align:right">63.4</td>
+<td style="text-align:right">1185.9</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.784</td>
+<td style="text-align:right">306.9</td>
+<td style="text-align:right">409.1</td>
+<td style="text-align:right">513.1</td>
+<td style="text-align:right">3.2</td>
+<td style="text-align:right">397.3</td>
+<td style="text-align:right">23.5</td>
+<td style="text-align:right">452.1</td>
+<td style="text-align:right">68.9</td>
+<td style="text-align:right">984.0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.856</td>
+<td style="text-align:right">310.7</td>
+<td style="text-align:right">408.5</td>
+<td style="text-align:right">410.7</td>
+<td style="text-align:right">3.2</td>
+<td style="text-align:right">396.8</td>
+<td style="text-align:right">22.2</td>
+<td style="text-align:right">473.3</td>
+<td style="text-align:right">69.3</td>
+<td style="text-align:right">887.3</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.914</td>
+<td style="text-align:right">316.8</td>
+<td style="text-align:right">410.1</td>
+<td style="text-align:right">433.4</td>
+<td style="text-align:right">3.0</td>
+<td style="text-align:right">420.2</td>
+<td style="text-align:right">23.0</td>
+<td style="text-align:right">431.1</td>
+<td style="text-align:right">66.0</td>
+<td style="text-align:right">1002.6</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.954</td>
+<td style="text-align:right">324.7</td>
+<td style="text-align:right">407.8</td>
+<td style="text-align:right">429.3</td>
+<td style="text-align:right">2.9</td>
+<td style="text-align:right">409.7</td>
+<td style="text-align:right">22.1</td>
+<td style="text-align:right">531.9</td>
+<td style="text-align:right">67.8</td>
+<td style="text-align:right">783.7</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">377.1</td>
+<td style="text-align:right">456.2</td>
+<td style="text-align:right">491.0</td>
+<td style="text-align:right">2.6</td>
+<td style="text-align:right">474.6</td>
+<td style="text-align:right">19.8</td>
+<td style="text-align:right">494.3</td>
+<td style="text-align:right">64.7</td>
+<td style="text-align:right">788.8</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.784</td>
+<td style="text-align:right">357.3</td>
+<td style="text-align:right">432.5</td>
+<td style="text-align:right">460.8</td>
+<td style="text-align:right">2.7</td>
+<td style="text-align:right">446.7</td>
+<td style="text-align:right">20.2</td>
+<td style="text-align:right">536.5</td>
+<td style="text-align:right">62.6</td>
+<td style="text-align:right">781.9</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.856</td>
+<td style="text-align:right">371.5</td>
+<td style="text-align:right">456.8</td>
+<td style="text-align:right">530.3</td>
+<td style="text-align:right">2.7</td>
+<td style="text-align:right">410.5</td>
+<td style="text-align:right">20.4</td>
+<td style="text-align:right">486.8</td>
+<td style="text-align:right">62.1</td>
+<td style="text-align:right">813.8</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.914</td>
+<td style="text-align:right">369.5</td>
+<td style="text-align:right">428.1</td>
+<td style="text-align:right">450.1</td>
+<td style="text-align:right">2.5</td>
+<td style="text-align:right">464.7</td>
+<td style="text-align:right">19.6</td>
+<td style="text-align:right">509.3</td>
+<td style="text-align:right">60.8</td>
+<td style="text-align:right">819.4</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">40</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.954</td>
+<td style="text-align:right">375.4</td>
+<td style="text-align:right">453.9</td>
+<td style="text-align:right">511.4</td>
+<td style="text-align:right">2.6</td>
+<td style="text-align:right">479.2</td>
+<td style="text-align:right">19.5</td>
+<td style="text-align:right">488.5</td>
+<td style="text-align:right">57.0</td>
+<td style="text-align:right">885.6</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">64</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">423.7</td>
+<td style="text-align:right">513.0</td>
+<td style="text-align:right">552.5</td>
+<td style="text-align:right">2.3</td>
+<td style="text-align:right">516.6</td>
+<td style="text-align:right">16.5</td>
+<td style="text-align:right">786.8</td>
+<td style="text-align:right">44.9</td>
+<td style="text-align:right">1058.8</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">64</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.784</td>
+<td style="text-align:right">422.6</td>
+<td style="text-align:right">512.5</td>
+<td style="text-align:right">621.2</td>
+<td style="text-align:right">2.3</td>
+<td style="text-align:right">649.0</td>
+<td style="text-align:right">17.9</td>
+<td style="text-align:right">537.5</td>
+<td style="text-align:right">41.0</td>
+<td style="text-align:right">1829.6</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">64</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.856</td>
+<td style="text-align:right">426.5</td>
+<td style="text-align:right">517.5</td>
+<td style="text-align:right">768.7</td>
+<td style="text-align:right">2.2</td>
+<td style="text-align:right">638.3</td>
+<td style="text-align:right">15.1</td>
+<td style="text-align:right">1499.7</td>
+<td style="text-align:right">42.9</td>
+<td style="text-align:right">1112.9</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">64</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.914</td>
+<td style="text-align:right">436.9</td>
+<td style="text-align:right">514.9</td>
+<td style="text-align:right">542.8</td>
+<td style="text-align:right">2.2</td>
+<td style="text-align:right">528.4</td>
+<td style="text-align:right">17.0</td>
+<td style="text-align:right">552.0</td>
+<td style="text-align:right">38.9</td>
+<td style="text-align:right">1198.4</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">64</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.954</td>
+<td style="text-align:right">469.2</td>
+<td style="text-align:right">526.8</td>
+<td style="text-align:right">1023.4</td>
+<td style="text-align:right">2.1</td>
+<td style="text-align:right">549.4</td>
+<td style="text-align:right">15.8</td>
+<td style="text-align:right">578.3</td>
+<td style="text-align:right">38.1</td>
+<td style="text-align:right">1291.0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">128</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.506</td>
+<td style="text-align:right">465.0</td>
+<td style="text-align:right">515.3</td>
+<td style="text-align:right">540.8</td>
+<td style="text-align:right">2.0</td>
+<td style="text-align:right">567.7</td>
+<td style="text-align:right">17.1</td>
+<td style="text-align:right">555.3</td>
+<td style="text-align:right">42.5</td>
+<td style="text-align:right">1126.2</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">128</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">0.784</td>
+<td style="text-align:right">427.6</td>
+<td style="text-align:right">520.7</td>
+<td style="text-align:right">614.0</td>
+<td style="text-align:right">2.1</td>
+<td style="text-align:right">856.4</td>
+<td style="text-align:right">17.5</td>
+<td style="text-align:right">535.3</td>
+<td style="text-align:right">43.9</td>
+<td style="text-align:right">1078.1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">128</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">0.856</td>
+<td style="text-align:right">434.1</td>
+<td style="text-align:right">514.9</td>
+<td style="text-align:right">618.5</td>
+<td style="text-align:right">2.3</td>
+<td style="text-align:right">516.5</td>
+<td style="text-align:right">17.4</td>
+<td style="text-align:right">529.3</td>
+<td style="text-align:right">40.9</td>
+<td style="text-align:right">1145.0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">128</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">0.914</td>
+<td style="text-align:right">420.7</td>
+<td style="text-align:right">462.9</td>
+<td style="text-align:right">500.1</td>
+<td style="text-align:right">2.3</td>
+<td style="text-align:right">483.6</td>
+<td style="text-align:right">17.5</td>
+<td style="text-align:right">535.4</td>
+<td style="text-align:right">40.9</td>
+<td style="text-align:right">1163.9</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:right">128</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">0.954</td>
+<td style="text-align:right">431.3</td>
+<td style="text-align:right">474.0</td>
+<td style="text-align:right">515.0</td>
+<td style="text-align:right">2.3</td>
+<td style="text-align:right">509.7</td>
+<td style="text-align:right">16.6</td>
+<td style="text-align:right">549.8</td>
+<td style="text-align:right">40.5</td>
+<td style="text-align:right">1098.0</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<p>Fastest config with recall@10 ≥ 0.95: <strong>nprobes=10, refine=40</strong> (p50 297.9 ms, recall 0.952)</p>
+<h2 id="other-query-types">Other query types</h2>
+<table>
+<thead>
+<tr>
+<th>scenario</th>
+<th style="text-align:right">recall</th>
+<th style="text-align:right">p50 ms</th>
+<th style="text-align:right">p95 ms</th>
+<th style="text-align:right">p99 ms</th>
+<th style="text-align:right">QPS c=1</th>
+<th style="text-align:right">p99 c=1</th>
+<th style="text-align:right">QPS c=8</th>
+<th style="text-align:right">p99 c=8</th>
+<th style="text-align:right">QPS c=32</th>
+<th style="text-align:right">p99 c=32</th>
+<th style="text-align:right">errors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fts</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">69.1</td>
+<td style="text-align:right">1127.6</td>
+<td style="text-align:right">2712.1</td>
+<td style="text-align:right">19.9</td>
+<td style="text-align:right">83.3</td>
+<td style="text-align:right">115.5</td>
+<td style="text-align:right">331.5</td>
+<td style="text-align:right">620.4</td>
+<td style="text-align:right">144.7</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>hybrid</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">57.3</td>
+<td style="text-align:right">70.3</td>
+<td style="text-align:right">96.8</td>
+<td style="text-align:right">17.0</td>
+<td style="text-align:right">87.9</td>
+<td style="text-align:right">134.0</td>
+<td style="text-align:right">89.9</td>
+<td style="text-align:right">332.8</td>
+<td style="text-align:right">187.0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>filter_scan</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">53.4</td>
+<td style="text-align:right">62.2</td>
+<td style="text-align:right">77.4</td>
+<td style="text-align:right">17.7</td>
+<td style="text-align:right">100.2</td>
+<td style="text-align:right">147.7</td>
+<td style="text-align:right">87.0</td>
+<td style="text-align:right">605.6</td>
+<td style="text-align:right">84.8</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>

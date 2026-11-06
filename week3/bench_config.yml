@@ -1,0 +1,54 @@
+name: bench_50M
+rows: 20_000_000
+batch_size: 100_000
+seed: 42
+output:
+  destination: "cluster://sylvain-demo"
+  db_name: "benchv2"
+  table_name: bench_50M
+  overwrite: true
+
+fields:
+  - name: id
+    type: uint64
+    auto_increment: true
+    primary_key: true
+
+  - name: vector
+    type: vector
+    dims: 1536
+    distribution: gaussian
+    normalize: true
+
+  - name: text
+    type: string
+    generator: sentence
+    min_words: 8
+    max_words: 25
+
+  - name: category
+    type: string
+    generator: categorical
+    values: [sports, tech, finance, health, travel]
+    value_distribution: zipf
+
+  - name: price
+    type: float32
+    min_val: 0.01
+    max_val: 9999.99
+    distribution: log_normal
+
+  - name: created_at
+    type: timestamp
+    start: "2020-01-01"
+    end: "2024-12-31"
+    unit: us
+
+  - name: is_active
+    type: bool
+    true_probability: 0.85
+
+generate_ground_truth: true
+num_query_vectors: 100
+ground_truth_k: 10
+ground_truth_metric: cosine

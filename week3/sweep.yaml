@@ -1,0 +1,31 @@
+experiment_name: "my-sweep"        # required; groups all runs under one experiment
+benchmark_type: vector_search            # see Supported Types below
+
+base_config:                             # all fields of the underlying benchmark config
+  table_name: "bench_50M"
+  vector_column: "vector"
+  id_column: "id"
+  query_vectors_path: "/Users/slegouellec/workspace/onboarding/week3/data/bench_50M_queries.npy"
+  ground_truth_path: "/Users/slegouellec/workspace/onboarding/week3/data/bench_50M_gt.npy"
+
+index:
+  build_index: true 
+  vector_index_type: "IVF_PQ"
+  pq_num_subvectors: 64
+  distance_type: "cosine"
+
+query:
+  nprobes: 20                          # overridden by sweep below
+  refine_factor: 1
+  k: 10
+
+run:
+  concurrency: 16
+  query_count: 100
+  warmup_count: 50
+
+# Sweep: vary nprobes across this range
+sweep_grid:
+  query.nprobes: [1, 2, 4, 8, 16, 32, 64, 128]
+  query.refine_factor: [1, 5, 10, 40]
+  run.concurrency: [16, 32]

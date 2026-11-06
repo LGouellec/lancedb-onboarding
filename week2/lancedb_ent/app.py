@@ -54,6 +54,7 @@ elif len(sys.argv) == 3:
         print(results.drop(columns=["image"]))
         save_images(results, sys.argv[2])
     elif sys.argv[1] == '--vector-search':
+        val.drop_index("image_emb_idx")
         # Text -> image: embed the query with the same CLIP model and search the image embeddings
         results = (val
             .search(embed_text(sys.argv[2]), vector_column_name="image_emb")
