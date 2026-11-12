@@ -1,9 +1,12 @@
 import lancedb
 
+from lancedb.remote import ClientConfig, RetryConfig
+
 db = lancedb.connect(
     "db://benchv2",
     host_override="http://localhost:10024",
-    api_key="b583083048a24627a7a3e6544bab26c337e0980f5d02736bdf2ab34c6f7754af")
+    api_key="b583083048a24627a7a3e6544bab26c337e0980f5d02736bdf2ab34c6f7754af",
+    client_config=ClientConfig(retry_config=RetryConfig(retries=1)))
 
 print(db.list_tables().tables)
 
