@@ -2,7 +2,7 @@ import random
 from typing import Optional
 
 import lancedb
-from lancedb import Table, col, udf
+from lancedb import Table, col, udf, function
 import pyarrow as pa
 
 TABLE_NAME = "functions_demo"
@@ -12,7 +12,7 @@ WORDS = ["lance", "vector", "search", "index", "query", "table", "column",
             "arrow", "data", "fast", "storage", "embedding", "score", "row"]
 
 db = lancedb.connect(
-    "db://function",
+    "db://sylvain_demo",
     host_override="http://localhost:10024",
     api_key="b583083048a24627a7a3e6544bab26c337e0980f5d02736bdf2ab34c6f7754af")
 
